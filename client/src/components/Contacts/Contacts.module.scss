@@ -1,0 +1,79 @@
+// @import url('https://fonts.googleapis.com/css?family=Gelasio&display=swap');
+
+
+// .contact{ 
+//     width:50em;
+//     padding:40px;
+//     position: absolute;
+//     top:40%;
+//     left:50%;
+//     transform: translate(-50%,-50%);
+//     background:#191919;
+//     text-align: center;
+//     border:0.3em solid #3498db;
+//     border-radius: 3em;
+//     background:var(--contact-form-background, rgb(0,0,0,0.8));
+//     }
+    
+//     .authForm h2{
+//         color:white;
+//         text-transform: uppercase;
+//         font-weight: 700;
+//         font-size: 40px;
+//     }
+    
+//     .authForm input[type="name"]::placeholder, input[type="email"]::placeholder{
+//     color:#808080;
+//     }
+    
+//     .authForm input[type="name"], .authForm input[type="email"],.authForm textarea,.authForm input[type="phone"]{
+//         border:0;
+//         background:none;
+//         display: block;
+//         margin: 20px auto;
+//         text-align: left;
+//         border:2px solid #3498db;
+//         padding:14px 10px;
+//         width:400px;
+//         outline:none;
+//         color:white;
+//         border-radius: 24px;
+//         transition: 0.25s;
+//     }
+    
+//     .authForm input[type="name"]:hover, .authForm input[type="email"]:hover,.authForm input[type="phone"]:hover{
+//         border:2px solid #2ecc71;
+//     }
+
+//     span{
+//         color:white;
+//         font-family: 'Gelasio', serif;
+//         font-style: italic;
+//         font-weight: bold;
+//         font-size:20px;
+//         color:#2ecc71;
+//     }
+//     .authForm textarea:hover{
+//         width:400px;
+//         height:100px;
+//         border:2px solid #2ecc71;
+//     }
+//     .submitBtn{
+//         border:0;
+//         background:none;
+//         display: block;
+//         margin:20px auto;
+//         text-align: center;
+    
+//         border:2px solid #2ecc71;
+//         padding:10px 30px;
+//         outline: none;
+//         color:white;
+//         border-radius: 23px;
+//         transition: 0.25s;
+//     }
+    
+    
+//     .submitBtn:hover{
+//         background:#2ecc71;
+//     }
