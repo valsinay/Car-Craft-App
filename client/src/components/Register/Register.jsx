@@ -15,7 +15,6 @@ export default function Register() {
     console.log(date, dateString);
   }
 
-
   // handleChange = (e) => {
   //   this.setState({
   //     data: {
@@ -38,12 +37,10 @@ export default function Register() {
   //   });
   //   this.props.history.push("/login");
   // }
-  const [focus, setFocused] = useState(false)
-  
-    const onFocus = () =>setFocused(true)
-    const onBlur = () =>setFocused(false)
+  const [focus, setFocused] = useState(false);
 
-
+  const onFocus = () => setFocused(true);
+  const onBlur = () => setFocused(false);
 
   return (
     <div className={styles.form}>
@@ -76,14 +73,22 @@ export default function Register() {
           //  onChange={this.handleChange}
         />
 
-        {/* <input className={styles.datePicker} type="text" 
-        name="date" 
-        onfocus="(this.type='date')"
-        placeholder="Select birthdate"/> */}
+        <input
+          className={styles.datePicker}
+          type="text"
+          placeholder="Select your birthdate"
+          name="date"
+          onFocus={onFocus}
+          onBlur={onBlur}
+          type={`${focus == true ? "date" : "text"}`}
+        />
 
-        <input className={styles.datePicker} type='text' placeholder="Select your birthdate"
-        
-        name="date" onFocus={onFocus} onBlur={onBlur} type={`${focus == true ? "date" : "text"}`} />
+          <input
+          className={styles.address}
+          type="text"
+          placeholder="Enter your address"
+          name="address"
+        />
 
         <button className={styles.submitBtn} type="submit">
           Register
