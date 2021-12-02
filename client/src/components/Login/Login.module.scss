@@ -3,8 +3,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  width: 75vw;
-
+  width: 65vw;
 
   .authForm {
     display: flex;
@@ -12,8 +11,8 @@
     background: #191919;
     min-width: 450px;
     width: 50%;
-    height: 55vh;
-    justify-content: space-evenly;
+    height: 59vh;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     border: 0.3em solid black;
@@ -26,6 +25,7 @@
       text-transform: uppercase;
       font-size: 2.5em;
       font-weight: 700;
+      letter-spacing: 1.5px;
     }
 
     .username::placeholder,
@@ -41,41 +41,22 @@
       text-align: left;
       border: 2px solid #3498db;
       padding: 11px 8px;
-      width: 80%;
+      width: 77%;
       outline: none;
       color: white;
       border-radius: 12px;
       transition: 0.25s;
-      
     }
 
     .username:focus,
     .password:focus {
       border: 2px solid #2ecc71;
-      
+
       // &:focus{
       //   border: 2px solid #2ecc71;
       // }
     }
-    .submitBtn {
-      background: none;
-      display: block;
-      margin: 20px auto;
-      text-align: center;
-      border-style: none;
-      padding: 8px 60px;
-      outline: none;
-      color: white;
-      border-radius: 13px;
-      transition: 0.25s;
-      background: #2ecc71;
-      text-transform: uppercase;
-      font-size: 1.3em;
-    }
-
-    .submitBtn:hover {
-      background: #1a924c;
-    }
+    
 
     .toast-container {
       color: white !important;
@@ -94,12 +75,30 @@
         text-decoration: none;
         color: white;
         margin-left: 5px;
-
       }
       & :hover {
         text-decoration: none;
         font-weight: bold;
       }
+    }
+  }
+  .submitBtn {
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border-style: none;
+    padding: 8px 60px;
+    outline: none;
+    color: white;
+    border-radius: 13px;
+    transition: 0.25s;
+    background: #2ecc71;
+    text-transform: uppercase;
+    font-size: 1.3em;
+
+    &:hover {
+      background: #1a924c;
     }
   }
 }

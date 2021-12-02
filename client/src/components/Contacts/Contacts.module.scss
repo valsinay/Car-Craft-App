@@ -1,79 +1,85 @@
-// @import url('https://fonts.googleapis.com/css?family=Gelasio&display=swap');
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background: #191919;
+  min-width: 450px;
+  width: 50%;
+  height: 59vh;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border: 0.3em solid black;
+  border-radius: 1.5em;
+  background: var(--contact-form-background, rgb(0, 0, 0, 0.8));
+  padding: 30px;
 
 
-// .contact{ 
-//     width:50em;
-//     padding:40px;
-//     position: absolute;
-//     top:40%;
-//     left:50%;
-//     transform: translate(-50%,-50%);
-//     background:#191919;
-//     text-align: center;
-//     border:0.3em solid #3498db;
-//     border-radius: 3em;
-//     background:var(--contact-form-background, rgb(0,0,0,0.8));
-//     }
-    
-//     .authForm h2{
-//         color:white;
-//         text-transform: uppercase;
-//         font-weight: 700;
-//         font-size: 40px;
-//     }
-    
-//     .authForm input[type="name"]::placeholder, input[type="email"]::placeholder{
-//     color:#808080;
-//     }
-    
-//     .authForm input[type="name"], .authForm input[type="email"],.authForm textarea,.authForm input[type="phone"]{
-//         border:0;
-//         background:none;
-//         display: block;
-//         margin: 20px auto;
-//         text-align: left;
-//         border:2px solid #3498db;
-//         padding:14px 10px;
-//         width:400px;
-//         outline:none;
-//         color:white;
-//         border-radius: 24px;
-//         transition: 0.25s;
-//     }
-    
-//     .authForm input[type="name"]:hover, .authForm input[type="email"]:hover,.authForm input[type="phone"]:hover{
-//         border:2px solid #2ecc71;
-//     }
+.contactHeading {
+  color: white;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 
-//     span{
-//         color:white;
-//         font-family: 'Gelasio', serif;
-//         font-style: italic;
-//         font-weight: bold;
-//         font-size:20px;
-//         color:#2ecc71;
-//     }
-//     .authForm textarea:hover{
-//         width:400px;
-//         height:100px;
-//         border:2px solid #2ecc71;
-//     }
-//     .submitBtn{
-//         border:0;
-//         background:none;
-//         display: block;
-//         margin:20px auto;
-//         text-align: center;
+}
+
+// .username::placeholder,
+// .email::placeholder,
+// .phone::placeholder,
+// .message::placeholder {
+//   color: #808080;
+// }
+
+.username,
+.email,
+.phone,
+.message{
+    border: 0;
+    background: none;
+    display: block;
+    text-align: left;
+    border: 2px solid #3498db;
+    padding: 11px 8px;
+    width: 77%;
+    outline: none;
+    color: white;
+    border-radius: 12px;
+    transition: 0.25s;
+  
+    &::placeholder{
+        color: #808080;
+    }
+  &:focus{
+    border: 2px solid #2ecc71
     
-//         border:2px solid #2ecc71;
-//         padding:10px 30px;
-//         outline: none;
-//         color:white;
-//         border-radius: 23px;
-//         transition: 0.25s;
-//     }
-    
-    
-//     .submitBtn:hover{
-//         background:#2ecc71;
-//     }
+  }
+}
+
+.authForm input[type="name"]:hover,
+.authForm input[type="email"]:hover,
+.authForm input[type="phone"]:hover {
+  border: 2px solid #2ecc71;
+}
+
+
+.submitBtn {
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border-style: none;
+    padding: 8px 60px;
+    outline: none;
+    color: white;
+    border-radius: 13px;
+    transition: 0.25s;
+    background: #2ecc71;
+    text-transform: uppercase;
+    font-size: 1.3em;
+
+    &:hover {
+      background: #1a924c;
+    }
+  }
+}
