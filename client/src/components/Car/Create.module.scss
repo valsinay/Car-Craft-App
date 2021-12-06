@@ -1,92 +1,92 @@
 
-.create {
-    font-size: 2em;
-    text-align: center;
-    color: #313537;
-    padding-top:1.5em;
-  }
+// .create {
+//     font-size: 2em;
+//     text-align: center;
+//     color: #313537;
+//     padding-top:1.5em;
+//   }
 
  
 
-.createCar {
-   border: 1px solid #9da5b2;
-  border-radius: 0.7em;
-  flex-direction: column;
-  max-width: 50%;
- background:var(--contact-form-background, rgb(0,0,0,0.8));
- margin-top:2em;
- margin-left:30em;
- height:65em;
-}
+// .createCar {
+//    border: 1px solid #9da5b2;
+//   border-radius: 0.7em;
+//   flex-direction: column;
+//   max-width: 50%;
+//  background:var(--contact-form-background, rgb(0,0,0,0.8));
+//  margin-top:2em;
+//  margin-left:30em;
+//  height:65em;
+// }
   
-.createCar div{
-  margin-top:1.8rem;
-  margin-right:11em;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+// .createCar div{
+//   margin-top:1.8rem;
+//   margin-right:11em;
+//   text-align: center;
+//   align-items: center;
+//   justify-content: center;
   
-}
+// }
 
-.createCar option {
-    font-size: 1.2em;
-    color: #FFFFFF;
-    border-radius:15px;
-    background-color:blue;
-  }
+// .createCar option {
+//     font-size: 1.2em;
+//     color: #FFFFFF;
+//     border-radius:15px;
+//     background-color:blue;
+//   }
 
-  .createCar select {
-    text-align-last:center;
-    width: 31.3%;
-}
+//   .createCar select {
+//     text-align-last:center;
+//     width: 31.3%;
+// }
 
-.createCar input,
-.createCar select {
-  outline: none;
-  border: 1px solid #9da5b2;
-  border-radius: 0.7em;
-  text-align: center;
-  padding: 0.5em 0.3em;
-  width: 30%;
-  margin: 0 auto;
-  transition: 0.2s;
-}
+// .createCar input,
+// .createCar select {
+//   outline: none;
+//   border: 1px solid #9da5b2;
+//   border-radius: 0.7em;
+//   text-align: center;
+//   padding: 0.5em 0.3em;
+//   width: 30%;
+//   margin: 0 auto;
+//   transition: 0.2s;
+// }
 
-.createCar label,
-.engineBox label {
-  display: inline-block;
-  text-align: right;
-  font-size: 1.1em;
-  padding: 0 1em;
-  width: 10em;
-  color:#D81921;
-}
+// .createCar label,
+// .engineBox label {
+//   display: inline-block;
+//   text-align: right;
+//   font-size: 1.1em;
+//   padding: 0 1em;
+//   width: 10em;
+//   color:#D81921;
+// }
 
-.description textarea{
-  vertical-align: top;
-  outline: none;
-  border: 1px solid #9da5b2;
-  border-radius: 0.4em;
-  padding: 0.6em;
-  width: 30%;
-  height: 6em;
-}
+// .description textarea{
+//   vertical-align: top;
+//   outline: none;
+//   border: 1px solid #9da5b2;
+//   border-radius: 0.4em;
+//   padding: 0.6em;
+//   width: 30%;
+//   height: 6em;
+// }
 
 
-.createCarBtn:hover{
-background-color:  #D81921;
-color:white;
-;}
+// .createCarBtn:hover{
+// background-color:  #D81921;
+// color:white;
+// ;}
 
-.createCarBtn{
-  border:0;
-  background:none;
-  display: block;
-  width:28%;
-  border:2px solid #D81921;
-  padding:10px 30px;
-  outline: none;
-  color:white;
-  border-radius: 23px;
-  transition: 0.25s;
-}
+// .createCarBtn{
+//   border:0;
+//   background:none;
+//   display: block;
+//   width:28%;
+//   border:2px solid #D81921;
+//   padding:10px 30px;
+//   outline: none;
+//   color:white;
+//   border-radius: 23px;
+//   transition: 0.25s;
+// }

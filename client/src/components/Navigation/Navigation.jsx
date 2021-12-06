@@ -1,5 +1,5 @@
 import React, { useContext, Fragment, useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 import styles from "./Navigation.module.scss";
 import { AuthContext } from "../Context/AuthContext";
 import sessionManager from "../../utils/session-manager";
@@ -21,28 +21,28 @@ function Navigation() {
         </NavLink>
       </div>
       <ul className={styles.navMenu}>
-        <li className={styles.coolLink}>
+        <li >
           <NavLink exact activeClassName={styles.active} to="/">
             Home
           </NavLink>
         </li>
-        <li className={styles.coolLink}>
+        <li >
           <NavLink to="/search" activeClassName={styles.active}>
             Search
           </NavLink>
         </li>
-        <li className={styles.coolLink}>
+        <li >
           <NavLink to="/about" activeClassName={styles.active}>
             About
           </NavLink>
         </li>
-        <li className={styles.coolLink}>
+        <li >
           <NavLink to="/contacts" activeClassName={styles.active}>
             Contact
           </NavLink>
         </li>
         {isLogged ? (
-          <li className={styles.coolLink}>
+          <li >
             <NavLink exact activeClassName={styles.active} to="/create-car">
               Create Car
               <img
@@ -70,12 +70,12 @@ function Navigation() {
           </>
         ) : (
           <>
-            <li className="cool-link auth active">
-              <NavLink to="/logout" activeClassName="active">
+            <li >
+              <NavLink to="/" activeClassName="active">
                 Welcome, {username}
               </NavLink>
             </li>
-            <li className="cool-link auth active">
+            <li >
               <NavLink to="/logout" activeClassName="active">
                 Logout
               </NavLink>
