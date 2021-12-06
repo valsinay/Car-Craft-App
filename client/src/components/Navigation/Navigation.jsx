@@ -1,8 +1,9 @@
 import React, { useContext, Fragment, useState, useEffect } from "react";
-import {NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./Navigation.module.scss";
 import { AuthContext } from "../Context/AuthContext";
 import sessionManager from "../../utils/session-manager";
+import { CarSportOutline } from "react-ionicons";
 
 function Navigation() {
   const [user] = useContext(AuthContext);
@@ -21,37 +22,37 @@ function Navigation() {
         </NavLink>
       </div>
       <ul className={styles.navMenu}>
-        <li >
+        <li>
           <NavLink exact activeClassName={styles.active} to="/">
             Home
           </NavLink>
         </li>
-        <li >
+        <li>
           <NavLink to="/search" activeClassName={styles.active}>
             Search
           </NavLink>
         </li>
-        <li >
+        <li>
           <NavLink to="/about" activeClassName={styles.active}>
             About
           </NavLink>
         </li>
-        <li >
+        <li>
           <NavLink to="/contacts" activeClassName={styles.active}>
             Contact
           </NavLink>
         </li>
-        {isLogged ? (
-          <li >
-            <NavLink exact activeClassName={styles.active} to="/create-car">
-              Create Car
-              <img
-                className="active"
-                src="https://img.icons8.com/ios/48/000000/sedan.png"
-              />
-            </NavLink>
-          </li>
-        ) : null}
+        {/* {isLogged ? ( */}
+        <li>
+          <NavLink exact activeClassName={styles.active} to="/create-car">
+            Create Car
+            {/* <img className="createCarImg"
+                src="/red-car.png"
+              />  */}
+            
+          </NavLink>
+        </li>
+        {/* // ) : null} */}
       </ul>
 
       <ul className={styles.navMenu}>
@@ -70,12 +71,12 @@ function Navigation() {
           </>
         ) : (
           <>
-            <li >
+            <li>
               <NavLink to="/" activeClassName="active">
                 Welcome, {username}
               </NavLink>
             </li>
-            <li >
+            <li>
               <NavLink to="/logout" activeClassName="active">
                 Logout
               </NavLink>

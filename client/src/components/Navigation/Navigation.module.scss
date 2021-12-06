@@ -12,8 +12,13 @@
   .navMenu:nth-child(2){
     flex-grow: 1;
     margin-left: 20px;
+    align-items: center;
   }
 
+  .carSvg{
+    width: 100px;
+    color:blue;
+  }
   .logo img {
     text-decoration: none;
     padding-left: 10px;
