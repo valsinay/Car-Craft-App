@@ -26,6 +26,7 @@
       font-size: 2.5em;
       font-weight: 700;
       letter-spacing: 1.5px;
+      text-shadow: 1px 0px 2px #fff1f1;
     }
 
     .username::placeholder,
@@ -48,11 +49,16 @@
       transition: 0.25s;
     }
 
+    input::before {
+      content: " *";
+      color: red;
+    }
+
     .username:focus,
     .password:focus {
       border: 2px solid #2ecc71;
+      transition: ease-in-out 2s;
     }
-    
 
     .toast-container {
       color: white !important;

@@ -114,9 +114,9 @@ function CreateCar(props) {
   };
 
   return (
-    <div className="carDiv">
-      <h2 className="title create">Create Your Car</h2>
-      <form onSubmit={handleSubmit} className="createCar">
+    <div className={styles.createCar}>
+      <form onSubmit={handleSubmit} className={styles.createCarForm}>
+        <h2 className={styles.carHeading}>Create Your Car</h2>
         <div>
           <label htmlFor="make">Make</label>
           <input
@@ -147,43 +147,7 @@ function CreateCar(props) {
             value={year}
           />
         </div>
-        <div>
-          <label htmlFor="horsePower">Horsepower</label>
-          <input
-            placeholder="Type car horsepower..."
-            type="text"
-            name="horsePower"
-            onChange={updateHorsepower}
-            value={horsePower}
-          />
-        </div>
-        <div>
-          <label htmlFor="mileage">Mileage</label>
-          <select
-            type="text"
-            name="mileage"
-            onChange={updateMileage}
-            value={mileage}
-          >
-            <option value="0" label="Select mileage" />
-            <option value="10000" label="Up to 10000" />
-            <option value="30000" label="Up to 30000" />
-            <option value="50000" label="Up to 50000" />
-            <option value="70000" label="Up to 70000" />
-            <option value="90000" label="Up to 90000" />
-            <option value="100000" label="Over 100000" />
-          </select>
-        </div>
-        <div>
-          <label htmlFor="engineCapacity">Engine Capacity</label>
-          <input
-            placeholder="Type car engine capacity..."
-            type="text"
-            name="engineCapacity"
-            onChange={updateEngineCapacity}
-            value={engineCapacity}
-          />
-        </div>
+      
         <div>
           <label htmlFor="category">Category</label>
           <select name="category" onChange={updateCategory} value={category}>
@@ -202,28 +166,12 @@ function CreateCar(props) {
           </label>
           <select name="engine" onChange={updateEngine} value={engine}>
             <option value="" label="Select engine" />
-            <option value="electric" label="electric" />
             <option value="diesel" label="diesel" />
-            <option value="gasoine" label="gasoline" />
+            <option value="petrol" label="petrol" />
+            <option value="electric" label="electric" />
           </select>
         </div>
-        <div>
-          <label htmlFor="euroStandard">Euro Standard</label>
-          <select
-            type="number"
-            name="euroStandard"
-            onChange={updateEuroStandard}
-            value={euroStandard}
-          >
-            <option value="" label="No matter" />
-            <option value="1" label="Euro 1" />
-            <option value="2" label="Euro 2" />
-            <option value="3" label="Euro 3" />
-            <option value="4" label="Euro 4" />
-            <option value="5" label="Euro 5" />
-            <option value="6" label="Euro 6" />
-          </select>
-        </div>
+        
         <div>
           <label htmlFor="price">Price</label>
           <input
@@ -244,7 +192,7 @@ function CreateCar(props) {
             placeholder="Type image url..."
           />
         </div>
-        <div className={styles.description}>
+        {/* <div className={styles.description}>
           <label htmlFor="price">Description</label>
           <textarea
             placeholder="Car problems and features..."
@@ -253,10 +201,10 @@ function CreateCar(props) {
             onChange={updateDescription}
             value={description}
           ></textarea>
-        </div>
+        </div> */}
 
         <button
-          className={styles.submitBtn }
+          className={styles.createCarBtn}
           type="submit"
           onSubmit={handleSubmit}
         >

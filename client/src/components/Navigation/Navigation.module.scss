@@ -4,7 +4,7 @@
 .mainWrapper {
   display: flex;
   margin: 0;
-  height: 60px;
+  height: 55px;
   align-items: center;
   justify-content: space-between;
   
@@ -40,7 +40,7 @@
 
     a {
       --fill-color: #d6191f;
-      font: 700 1.6rem Raleway, sans-serif;
+      font: 700 1.4rem Raleway, sans-serif;
       text-decoration: none;
       text-transform: uppercase;
       -webkit-text-stroke: 2px var(--fill-color);
@@ -48,6 +48,7 @@
       color: transparent;
       background-clip: text;
       transition: 0.5s linear;
+      letter-spacing: 1px;
 
       &:hover {
         background-size: 100%;

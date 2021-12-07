@@ -25,6 +25,8 @@
       text-transform: uppercase;
       font-size: 2.5em;
       font-weight: 700;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 0px 2px #fff1f1;
     }
 
     .username::placeholder,
@@ -49,6 +51,7 @@
 
       &:focus {
         border: 2px solid #2ecc71;
+        transition: ease-in-out 0.2s;
       }
     }
     ::-webkit-calendar-picker-indicator {

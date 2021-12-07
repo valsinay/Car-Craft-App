@@ -1,8 +1,10 @@
 .main {
-  background-image: url("/photo-of-person-driving-769892.jpg");
+  background-image: linear-gradient(rgb(50 47 47 / 50%), rgb(0 0 0 / 50%)), url(/photo-of-person-driving-769892.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   min-height: 100vh;
+  
   display: flex;
   justify-content: center;
   align-items: center;
