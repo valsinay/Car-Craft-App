@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import userService from "../../services/user-service";
 import { useHistory } from "react-router-dom";
 
- import { CheckmarkCircleOutline } from "react-ionicons";
 import registerValidator from "../../utils/register-validator";
 import { toast } from "react-toastify";
 import { Link} from "react-router-dom";
 import styles from "./Register.module.scss";
 import 'react-toastify/dist/ReactToastify.css';
 
-import ToastContainer from "../ToastContainer/ToastContainer";
 
 export default function Register() {
 

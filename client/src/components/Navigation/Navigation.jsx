@@ -1,7 +1,7 @@
 import React, { useContext, Fragment, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navigation.module.scss";
-import { AuthContext } from "../Context/AuthContext";
+import { AuthContext } from "../../Context/AuthContext";
 import sessionManager from "../../utils/session-manager";
 import { CarSportOutline } from "react-ionicons";
 
@@ -27,11 +27,7 @@ function Navigation() {
             Home
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/search" activeClassName={styles.active}>
-            Search
-          </NavLink>
-        </li>
+        
         <li>
           <NavLink to="/about" activeClassName={styles.active}>
             About
@@ -42,17 +38,14 @@ function Navigation() {
             Contact
           </NavLink>
         </li>
-        {/* {isLogged ? ( */}
+        {isLogged ? (
         <li>
           <NavLink exact activeClassName={styles.active} to="/create-car">
             Create Car
-            {/* <img className="createCarImg"
-                src="/red-car.png"
-              />  */}
-            
+           
           </NavLink>
         </li>
-        {/* // ) : null} */}
+        ) : null}
       </ul>
 
       <ul className={styles.navMenu}>

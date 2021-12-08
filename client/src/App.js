@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
 import Main from "./components/Main/Main";
-import { AuthProvider } from "./components/Context/AuthContext";
+import { AuthProvider } from "./Context/AuthContext";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ToastContainer,Zoom } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';

@@ -15,22 +15,6 @@ let CarSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-
-    horsePower: {
-        type: Number,
-        required: true
-    },
-
-    mileage: {
-        type: Number,
-        required: true
-    },
-
-    engineCapacity: {
-        type: Number,
-        required: true
-    },
-
     category: {
         type: String,
         required: true
@@ -39,15 +23,7 @@ let CarSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    euroStandard:{
-        type:String,
-        required:true
-    },
-
-    description: {
-        type: String,
-        required: true
-    },
+  
     price: {
         type: Number,
         required: true
@@ -55,7 +31,6 @@ let CarSchema = new mongoose.Schema({
     owner: {
         type: String,
         ref: "User"
-        
     },
     ownerId:{
         type:String

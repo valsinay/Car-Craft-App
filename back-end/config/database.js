@@ -1,5 +1,4 @@
 
-// PUT NAME OF DATABASE HERE !!!!!!!!!!!!!!!!!!!!! AFTER THE SLASH
 const DATABASE_URL = 'mongodb://localhost:27017/car-app-2021';
 
 const mongoose = require('mongoose');

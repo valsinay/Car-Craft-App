@@ -1,7 +1,7 @@
 import React, { useState, useContext, Component } from "react";
 import sessionManager from "../../utils/session-manager";
 import userService from "../../services/user-service";
-import { AuthContext } from "../Context/AuthContext";
+import { AuthContext } from "../../Context/AuthContext";
 import { toast } from "react-toastify";
 import signValidator from "../../utils/login-validator";
 
@@ -29,7 +29,7 @@ function Login(props) {
         .then((res) => {
           const { token, user } = res.data;
           sessionManager.save(token, user.username);
-          toast.success("🦄You have successfully logged in!", {
+          toast.success("You have successfully logged in!", {
             position: "top-right",
             toastClassName: "success",
           });
@@ -51,7 +51,7 @@ function Login(props) {
 
   return (
     <div className={styles.form}>
-      <form className={styles.authForm} onSubmit={handleSubmit}>
+      <form className={styles.authForm} onSubmit={handleSubmit} method="POST">
         <h2 className={styles.loginHeading}>Login here</h2>
         <input
           className={styles.username}

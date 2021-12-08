@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../Context/AuthContext';
+import { AuthContext } from '../../Context/AuthContext';
 import { Redirect } from 'react-router-dom';
 import userService from '../../services/user-service';
 import sessionManager from '../../utils/session-manager';

@@ -1,67 +1,44 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function carValidator(make, model, year, horsePower, mileage, engineCapacity,
-    category, engine, euroStandard, price, description) {
-    if (make === '') {
-        toast.error('You must fill the make field!');
+function carValidator(make, model, year,category, engine, price) {
+
+    if (make === '' || model === '' || year === '' || category===''|| engine ==='' || price === '') {
+        toast.error('Please fill in all the required fields!');
         return false;
     }
 
-    if (model === '') {
-        toast.error('You must fill the model field!');
+    if(typeof make != 'string')
+    {
+        toast.error('Make cannot be of type number.');
+          return false
+
+    }
+    if (typeof model !=='string') {
+        toast.error('Model cannot be of type number.');
         return false;
     }
 
-    if (year === '') {
-        toast.error('You must fill the year field!');
+    if (isNaN(year)) {
+        toast.error('Make cannot be of type number.');
         return false;
     } 
-    if (horsePower === '') {
+   
+    // if (category === '') {
       
-        toast.error('You must fill the horsepower field!');
+    //     toast.error('You must choose category');
+    //     return false;
+    // } 
+    // if (engine === '') {
       
-        return false;
-    } 
-    if (mileage === '') {
-      
-        toast.error('You must choose mileage!');
-      
-        return false;
-    } 
-    if (engineCapacity === '') {
-      
-        toast.error('You must fill the engineCapacity field!');
-      
-        return false;
-    } 
-    if (category === '') {
-      
-        toast.error('You must choose category');
-      
-        return false;
-    } 
-    if (engine === '') {
-      
-        toast.error('You must choose engine type!');
-      
-        return false;
-    } 
-    if (euroStandard === '') {
-      
-        toast.error('You must choose euro standard!');
-      
-        return false;
-    } 
-    if (price === '') {
-        toast.error('You must fill the price field!');
-        return false;
-    }
-
-    if(description === ""){
-        toast.error('You must fill the description field!')
-        return false;
-    }
+    //     toast.error('You must choose engine type!');
+    //     return false;
+    // } 
+    
+    // if (price === '') {
+    //     toast.error('You must fill the price field!');
+    //     return false;
+    // }
     return true;
 }
 
