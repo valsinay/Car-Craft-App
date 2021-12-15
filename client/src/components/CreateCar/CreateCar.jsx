@@ -3,7 +3,7 @@ import carService from "../../services/car-service";
 import carValidator from "../../utils/car-validator";
 import { AuthContext } from "../../Context/AuthContext";
 import sessionManager from "../../utils/session-manager";
-import styles from "./Create.module.scss";
+import styles from "./CreateCar.module.scss";
 import { toast } from "react-toastify";
 
 function CreateCar(props) {

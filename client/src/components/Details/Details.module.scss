@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Solway:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+.productCard {
+  min-height: 300px;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  background: linear-gradient(
+    359deg,
+    rgb(30 20 20) 0%,
+    rgba(57, 59, 60, 1) 80%
+  );
+  color: white;
+  overflow: hidden;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+//   &:hover {
+//     border-color: transparent;
+//     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgba(238, 232, 232, 0.12),
+//       0 5px 12px 4px rgba(219, 213, 213, 0.09);
+//       transform: scale(1.03);
+// //     transition: all 0.5s ease-out
+//   }
+
+  .productImgName,
+  .productInfo {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .productInfo {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 34px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .productImgName {
+    align-items: center;
+    height: 300px;
+    width: 420px;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      // object-fit: cover;
+      background-size: cover;
+    }
+  }
+
+  h1 {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    font-family: Raleway, serif;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+
+    span {
+      font-weight: 400;
+    }
+  }
+  .editBtn, .deleteBtn {
+    background: none;
+    display: block;
+    text-align: center;
+    border-style: none;
+    padding: 8px 60px;
+    outline: none;
+    color: white;
+    border-radius: 13px;
+    transition: 0.25s;
+    background: #3498db;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    box-shadow: 1px 1px 9px 0px black;
+    text-decoration: none;
+
+    &:hover {
+      background: #287eb8;
+      cursor: pointer;
+      
+    }
+  }
+}
+

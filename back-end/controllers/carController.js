@@ -16,9 +16,27 @@ router.post('/createCar', (req, res, next) => {
 
 router.get('/carList', async (req,res) =>{
     await Car.find({},(err,result) =>{
-        console.log("Car from db:", result)
-
         res.send(result)
+    })
+})
+
+router.get(`/details/:carId`,(req,res)=>{
+    const id=req.params.carId;
+    Car.findById(id)
+    .exec()
+    .then(doc=>{
+        console.log(doc)
+        res.status(200).json(doc)
+    }).catch(err=>{console.log(err)})
+
+})
+
+router.put(`/edit/:carId`,(req,res) =>{
+    const id=req.params.carId;
+    Car.updateOne({_id:id},req.body)
+    .then(updated=>{
+        res.send(updated)
+        .catch(err=>console.log(err))
     })
 })
 

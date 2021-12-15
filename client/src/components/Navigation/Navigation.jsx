@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import styles from "./Navigation.module.scss";
 import { AuthContext } from "../../Context/AuthContext";
 import sessionManager from "../../utils/session-manager";
-import { CarSportOutline } from "react-ionicons";
 
 function Navigation() {
   const [user] = useContext(AuthContext);

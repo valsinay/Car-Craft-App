@@ -6,7 +6,9 @@ import NotFound from "../NotFound/NotFound";
 import Contacts from "../Contacts/Contacts";
 import About from "../About/About";
 import CreateCar from "../CreateCar/CreateCar";
+import Details from '../Details/Details'
 import Homepage from "../Homepage/Homepage"
+import Edit from "../Edit/Edit";
 import { Routes, Route, Switch } from "react-router-dom";
 import styles from "./Main.module.scss";
 
@@ -21,6 +23,8 @@ const Main = () => {
         <Route exact path={"/contacts"} component={Contacts} />
         <Route exact path={"/about"} component={About} />
         <Route exact path={"/create-car"} component={CreateCar} />
+        <Route exact path={"/details/:carId"} component={Details} />
+        <Route exact path={"/edit/:carId"} component={Edit} />
         <Route exact path={"/*"} component={NotFound} />
 
       </Switch>

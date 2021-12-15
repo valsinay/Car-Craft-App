@@ -1,0 +1,22 @@
+.homepage {
+  display: flex;
+  justify-content: center;
+
+ 
+  .carList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 20px;
+
+    .carItem {
+      padding: 20px;
+      flex-grow: 1;
+      text-transform: uppercase;
+      min-width: 300px;
+      list-style: none;
+
+      
+    }
+  }
+}
