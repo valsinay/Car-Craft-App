@@ -26,7 +26,7 @@ export default function Edit({}){
         <form 
         // onSubmit={handleSubmit}
             className={styles.createCarForm} method="POST">
-          <h2 className={styles.carHeading}>Create Your Car</h2>
+          <h2 className={styles.carHeading}>Edit Your Car</h2>
           <div>
             <label htmlFor="make">Make</label>
             <input
