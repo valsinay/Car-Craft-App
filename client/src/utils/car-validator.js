@@ -24,21 +24,21 @@ function carValidator(make, model, year,category, engine, price) {
         return false;
     } 
    
-    // if (category === '') {
+    if (category === '') {
       
-    //     toast.error('You must choose category');
-    //     return false;
-    // } 
-    // if (engine === '') {
+        toast.error('You must choose category');
+        return false;
+    } 
+    if (engine === '') {
       
-    //     toast.error('You must choose engine type!');
-    //     return false;
-    // } 
+        toast.error('You must choose engine type!');
+        return false;
+    } 
     
-    // if (price === '') {
-    //     toast.error('You must fill the price field!');
-    //     return false;
-    // }
+    if (price === '') {
+        toast.error('You must fill the price field!');
+        return false;
+    }
     return true;
 }
 

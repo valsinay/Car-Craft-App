@@ -25,7 +25,6 @@ router.get(`/details/:carId`,(req,res)=>{
     Car.findById(id)
     .exec()
     .then(doc=>{
-        console.log(doc)
         res.status(200).json(doc)
     }).catch(err=>{console.log(err)})
 
@@ -34,11 +33,8 @@ router.get(`/details/:carId`,(req,res)=>{
 router.put(`/edit/:carId`,(req,res) =>{
     const id=req.params.carId;
     Car.updateOne({_id:id},req.body)
-    .then(updated=>{
-        res.send(updated)
         .catch(err=>console.log(err))
     })
-})
 
 
 

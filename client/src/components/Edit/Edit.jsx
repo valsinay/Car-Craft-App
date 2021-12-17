@@ -1,30 +1,41 @@
 import React, { useContext, useState, useEffect } from "react";
 import styles from  './Edit.module.scss'
 import carService from "../../services/car-service";
-import {useParams}from "react-router-dom"
+import {useParams, useHistory}from "react-router-dom"
+import {Categories} from '../../shared/CategoryOptions'
+import {Engines} from '../../shared/EngineOptions'
+import useCarState from '../../hooks/useCarState'
 
 export default function Edit({}){
+  const history = useHistory();
 
-    
     const {carId}=useParams();
+    const [car,setCar] = useCarState(carId)
+    const [category,setCategory] = useState('')
+    const [engine,setEngine] = useState('')
+   
+    useEffect(() => {
+      if (carId) {
+          setCategory(car.category);
+          setEngine(car.engine)
+          console.log(car.category +  " ot efekta")
+      }
+  }, [car]);
 
-    const [car,setCar]=useState({})
+    const carEditSubmitHandler = (e) => {
+      e.preventDefault();  
 
-    useEffect(()=>{
+      let carData = Object.fromEntries(new FormData(e.currentTarget))
 
-        carService.getOne(carId)
-        .then(result=>{
-            setCar(result)
-        })
+     carService.update(car._id, carData);
+     history.push('/')
+  }
 
-        console.log(car)
-
-    },[])
-
+  console.log(car.category)
     return(
         <div className={styles.createCar}>
         <form 
-        // onSubmit={handleSubmit}
+        onSubmit={carEditSubmitHandler}
             className={styles.createCarForm} method="POST">
           <h2 className={styles.carHeading}>Edit Your Car</h2>
           <div>
@@ -33,7 +44,6 @@ export default function Edit({}){
               placeholder="Type car make..."
               type="text"
               name="make"
-            //   onChange={updateMake}
               defaultValue={car.make}
             />
           </div>
@@ -43,7 +53,6 @@ export default function Edit({}){
               placeholder="Type car model..."
               type="text"
               name="model"
-            //   onChange={updateModel}
               defaultValue={car.model}
             />
           </div>
@@ -53,7 +62,6 @@ export default function Edit({}){
               placeholder="Type car year..."
               type="text"
               name="year"
-            //   onChange={updateYear}
               defaultValue={car.year}
             />
           </div>
@@ -61,15 +69,12 @@ export default function Edit({}){
           <div>
             <label htmlFor="category">Category</label>
             <select name="category" 
-            // onChange={updateCategory} 
-            defaultValue={car.category}>
-              <option value="" label="Select category" />
-              <option value="sedan" label="Sedan" />
-              <option value="suv" label="Suv" />
-              <option value="van" label="Van" />
-              <option value="coupe" label="Coupe" />
-              <option value="cabriolet" label="Cabriolet" />
-              <option value="hatchback" label="Hatchback" />
+            multiple={false}
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            >
+             {Categories.map(x => <option key={x.value} value={x.value}>{x.text}</option>)}
+
             </select>
           </div>
           <div>
@@ -77,12 +82,10 @@ export default function Edit({}){
               Engine
             </label>
             <select name="engine" 
-            // onChange={updateEngine} 
-            defaultValue={car.engine}>
-              <option value="" label="Select engine" />
-              <option value="diesel" label="diesel" />
-              <option value="petrol" label="petrol" />
-              <option value="electric" label="electric" />
+            onChange={(e) => setEngine(e.target.value)}
+             value={engine}
+            >
+            {Engines.map(x => <option key={x.value} value={x.value}>{x.text}</option>)}
             </select>
           </div>
           
@@ -92,7 +95,6 @@ export default function Edit({}){
               placeholder="$ 1000"
               type="text"
               name="price"
-            //   onChange={updatePrice}
               defaultValue={car.price}
             />
           </div>
@@ -101,7 +103,6 @@ export default function Edit({}){
             <input
               type="text"
               name="imageUrl"
-            //   onChange={updateImage}
               defaultValue={car.imageUrl}
               placeholder="Type image url..."
             />
@@ -109,9 +110,8 @@ export default function Edit({}){
           <button
             className={styles.createCarBtn}
             type="submit"
-            // onSubmit={handleSubmit}
             >
-                Create</button>
+                Save</button>
         </form>
       </div>
     )
