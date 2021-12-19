@@ -18,6 +18,10 @@ const carService = {
   getOne:(carId)=>{
     return fetch(`${host}/car/details/${carId}`)
     .then(res=>res.json())
+  },
+  delete:(carId,data)=>{
+    return axios.delete(`${host}/car/delete/${carId}`, data)
+
   }
 };
 

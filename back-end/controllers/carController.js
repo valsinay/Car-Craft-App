@@ -33,9 +33,19 @@ router.get(`/details/:carId`,(req,res)=>{
 router.put(`/edit/:carId`,(req,res) =>{
     const id=req.params.carId;
     Car.updateOne({_id:id},req.body)
+    .then(doc=>{
+        res.status(200).json(doc)
+    })
         .catch(err=>console.log(err))
     })
 
-
+router.delete('/delete/:carId', (req,res)=>{
+    const id=req.params.carId;
+    Car.deleteOne({_id:id}  )
+    .then(doc=>{
+        res.status(200).json(doc)
+    })
+    .catch(err=>console.log(err))
+})
 
 module.exports = router;

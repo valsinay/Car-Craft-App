@@ -4,6 +4,7 @@ import userService from "../../services/user-service";
 import { AuthContext } from "../../Context/AuthContext";
 import { toast } from "react-toastify";
 import signValidator from "../../utils/login-validator";
+import LoaderComponent from '../Common/LoaderComponent/LoaderComponent';
 
 import { Link } from "react-router-dom";
 import styles from "./Login.module.scss";
@@ -12,6 +13,8 @@ function Login(props) {
   const [user, setUserStatus] = useContext(AuthContext);
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [loading,setLoading]=useState(false)
+
 
   const updateUsername = (e) => {
     setUserName(e.target.value);
@@ -23,34 +26,42 @@ function Login(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true)
+
     if (signValidator(username, password)) {
       userService
         .login(username, password)
         .then((res) => {
           const { token, user } = res.data;
           sessionManager.save(token, user.username);
+
           toast.success("You have successfully logged in!", {
-            position: "top-right",
-            toastClassName: "success",
+            icon: "🚀"
           });
           setUserStatus({
             isLogged: sessionManager.isLogged(),
             userId: user._id,
           });
           props.history.push("/");
+
         })
         .catch(() => {
-          toast.error("Incorrect username or password", {
-            position: "top-right",
-            toastClassName: "toast-container error",
-          });
+          toast.error("Incorrect username or password");
+          setLoading(false)
           return false;
-        });
+        }); 
+
+    }
+    else{
+      setLoading(false)
     }
   };
 
   return (
-    <div className={styles.form}>
+    <>
+    {loading  ? <LoaderComponent />
+    
+    :<div className={styles.form}>
       <form className={styles.authForm} onSubmit={handleSubmit} method="POST">
         <h2 className={styles.loginHeading}>Login here</h2>
         <input
@@ -81,7 +92,9 @@ function Login(props) {
           </Link>
         </p>
       </form>
-    </div>
+    </div> }
+    </>
+
   );
 }
 

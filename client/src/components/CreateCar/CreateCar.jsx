@@ -50,7 +50,7 @@ function CreateCar(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (carValidator( make,model,year,category,engine, price,imageUrl)) {
+    if (carValidator(make,model,year,category,engine, price,imageUrl)) {
       carService
         .createCar({ make,model,year, category,engine, price, imageUrl,  owner: name, ownerId: userId, })
         .then((response) => {
@@ -92,7 +92,8 @@ function CreateCar(props) {
           <label htmlFor="year">Year</label>
           <input
             placeholder="Type car year..."
-            type="text"
+            type="number"
+            min="1800" max="2021"
             name="year"
             onChange={updateYear}
             value={year}
@@ -127,7 +128,8 @@ function CreateCar(props) {
           <label htmlFor="price">Price</label>
           <input
             placeholder="$ 1000"
-            type="text"
+            type="number"
+            min="1"
             name="price"
             onChange={updatePrice}
             value={price}

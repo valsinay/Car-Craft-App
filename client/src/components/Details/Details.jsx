@@ -1,24 +1,40 @@
 import styles from './Details.module.scss'
-import { Link,useParams} from 'react-router-dom';
+import { Link,useParams, useHistory} from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import carService from '../../services/car-service';
-
+import { toast } from "react-toastify";
+import LoaderComponent from '../Common/LoaderComponent/LoaderComponent';
 
 export default function Details(){
 
-    const [car,setCar] = useState({})
-    let {carId} = useParams();
+  const history = useHistory();
+  const [loading,setLoading]=useState(false)
+  const [car,setCar] = useState({})
+  const {carId} = useParams();
 
     useEffect(()=>{
-
         carService.getOne(carId)
         .then(carResult=>{
             setCar(carResult)
         })
-    },[])
+    },[carId])
 
 
+    const deleteHandler = (e)=>{
+        e.preventDefault();
+        setLoading(true)
+
+        carService.delete(carId)
+        .then(() =>{
+            toast.success("You deleted successfully your car!🚗");
+            history.push('/')       
+        });
+
+    }
     return(
+        <>
+        {loading ? <LoaderComponent/> : 
+         
         <div className={styles.productCard}>
             <h1> <span>{car.make} {car.model}</span></h1>
         <div className={styles.productImgName}>
@@ -33,9 +49,11 @@ export default function Details(){
             </div>
             <div className={styles.buttonBox}>
                 <Link className={styles.editBtn} to={`/edit/${car._id}`}>Edit</Link>
-                <Link className={styles.deleteBtn} to={`/delete/${car._id}`}>Delete</Link>
+                <Link className={styles.deleteBtn} to={`/delete/${car._id}`} onClick={deleteHandler}>Delete</Link>
             </div>
         </div>
-    </div>
+    </div>     
+  }
+    </>
     )
 }

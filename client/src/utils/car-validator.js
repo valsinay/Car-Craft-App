@@ -3,7 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function carValidator(make, model, year,category, engine, price) {
 
-    if (make === '' || model === '' || year === '' || category===''|| engine ==='' || price === '') {
+    if (make === '' || model === '' || year === '' || category===''|| engine === '' || price === '') {
         toast.error('Please fill in all the required fields!');
         return false;
     }
@@ -14,12 +14,12 @@ function carValidator(make, model, year,category, engine, price) {
           return false
 
     }
-    if (typeof model !=='string') {
+    if ( model ==='') {
         toast.error('Model cannot be of type number.');
         return false;
     }
 
-    if (isNaN(year)) {
+    if (year === '' ) {
         toast.error('Make cannot be of type number.');
         return false;
     } 

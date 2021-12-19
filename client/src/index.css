@@ -27,17 +27,28 @@ p {
 }
 
 .toaster-container {
+  margin-top: 40px;
   /* border-left: 5px solid green;
   display: flex;
   align-items: center;
   padding-left: 5px; */
+}
+
+.Toastify__toast {
+  border:2px solid black;
 
 }
 
-.toaster-container > div {
-  
-}
-
-.toaster-container > div > div {
- 
-}
+ /* .Toastify__toast {
+    cursor: inherit;
+    font-family: 'Circular';
+    background: red(255, 255, 255,0);
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 0.75em;
+    min-height: 120px;
+  }
+  .Toastify__toast-body {
+    padding: 0;
+    margin: 0; */
+  /* } */

@@ -3,6 +3,8 @@ import carService from "../../services/car-service";
 import CarCard from "../CarCard/CarCard";
 import { AuthContext } from "../../Context/AuthContext";
 import styles from "./Homepage.module.scss";
+import LoaderComponent from '../Common/LoaderComponent/LoaderComponent';
+
 
 export default function Homepage() {
   const [cars, setCars] = useState([]);
@@ -21,7 +23,6 @@ export default function Homepage() {
   },[])
 
   return (
-    <AuthContext.Provider value={[cars, setCars]}>
       <div className={styles.homepage}>
         {loading ? 
            <> 
@@ -34,9 +35,8 @@ export default function Homepage() {
                 : <p className="empty-list">No cars in database!</p>
             })
             </>
-            : (<h2>Loading</h2>)}
+            : <LoaderComponent/>}
         </div>
-     
-    </AuthContext.Provider>
+
   );
 }

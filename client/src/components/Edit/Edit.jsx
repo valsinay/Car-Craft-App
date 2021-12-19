@@ -4,7 +4,12 @@ import carService from "../../services/car-service";
 import {useParams, useHistory}from "react-router-dom"
 import {Categories} from '../../shared/CategoryOptions'
 import {Engines} from '../../shared/EngineOptions'
+import carValidator from "../../utils/car-validator";
 import useCarState from '../../hooks/useCarState'
+import { toast } from "react-toastify";
+import LoaderComponent from '../Common/LoaderComponent/LoaderComponent';
+
+
 
 export default function Edit({}){
   const history = useHistory();
@@ -13,26 +18,39 @@ export default function Edit({}){
     const [car,setCar] = useCarState(carId)
     const [category,setCategory] = useState('')
     const [engine,setEngine] = useState('')
+    const [loading,setLoading]=useState(false)
    
     useEffect(() => {
       if (carId) {
           setCategory(car.category);
           setEngine(car.engine)
-          console.log(car.category +  " ot efekta")
       }
   }, [car]);
 
     const carEditSubmitHandler = (e) => {
       e.preventDefault();  
-
+      setLoading(true)
       let carData = Object.fromEntries(new FormData(e.currentTarget))
 
-     carService.update(car._id, carData);
-     history.push('/')
+      // if(carValidator(car.make,car.model,car.year,category,engine,car.price)){
+        carService.update(car._id, carData)
+        // .then((response) => {
+        //   toast.success("You edited your car successfully! 🚗");
+        //   history.push("/");
+        //   console.log(response);
+        // })
+        // .catch((err) => {
+        //   toast.error(err);
+        // });
+          toast.success("You edited successfully your car!🚗");
+        history.push("/")
+
+      // }
   }
 
-  console.log(car.category)
     return(
+      <>
+      {loading ? <LoaderComponent/> :
         <div className={styles.createCar}>
         <form 
         onSubmit={carEditSubmitHandler}
@@ -60,7 +78,8 @@ export default function Edit({}){
             <label htmlFor="year">Year</label>
             <input
               placeholder="Type car year..."
-              type="text"
+              type="number"
+              min="1800" max="2021"
               name="year"
               defaultValue={car.year}
             />
@@ -83,7 +102,7 @@ export default function Edit({}){
             </label>
             <select name="engine" 
             onChange={(e) => setEngine(e.target.value)}
-             value={engine}
+            value={engine}
             >
             {Engines.map(x => <option key={x.value} value={x.value}>{x.text}</option>)}
             </select>
@@ -93,7 +112,8 @@ export default function Edit({}){
             <label htmlFor="price">Price</label>
             <input
               placeholder="$ 1000"
-              type="text"
+              type="number"
+              min="1"
               name="price"
               defaultValue={car.price}
             />
@@ -113,6 +133,7 @@ export default function Edit({}){
             >
                 Save</button>
         </form>
-      </div>
+      </div>}
+      </>
     )
 }

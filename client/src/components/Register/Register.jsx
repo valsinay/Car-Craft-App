@@ -7,19 +7,21 @@ import { toast } from "react-toastify";
 import { Link} from "react-router-dom";
 import styles from "./Register.module.scss";
 import 'react-toastify/dist/ReactToastify.css';
+import LoaderComponent from '../Common/LoaderComponent/LoaderComponent';
+
 
 
 export default function Register() {
 
   const history = useHistory();
-
   const [focus, setFocused] = useState(false);
-
-    const onFocus = () => setFocused(true);
-    const onBlur = () => setFocused(false);
+  const [loading,setLoading]=useState(false)
+  const onFocus = () => setFocused(true);
+  const onBlur = () => setFocused(false);
 
   const registerSubmitHandler = (e) => {
     e.preventDefault();
+    setLoading(true)
 
     let { username, password, confirmPassword, date, address } =
       Object.fromEntries(new FormData(e.currentTarget));
@@ -33,12 +35,16 @@ export default function Register() {
      history.push("/login");
      
     }
+    else{
+      setLoading(false)
+    }
   }
-    
+
 
     return (
-
-      <div className={styles.form}>
+       <>
+      {loading ? <LoaderComponent /> 
+     : <div className={styles.form}>
         <form
           className={styles.authForm}
           method="POST"
@@ -51,8 +57,6 @@ export default function Register() {
             name="username"
             autoComplete="off"
             placeholder="Username"
-            //  value={data.username}
-            // onChange={this.handleChange}
           />
           <input
             className={styles.password}
@@ -60,16 +64,12 @@ export default function Register() {
             name="password"
             autoComplete="off"
             placeholder="Password"
-            // value={data.password}
-            //  onChange={this.handleChange}
           />
           <input
             className={styles.password}
             type="password"
             name="confirmPassword"
             placeholder="Confirm password"
-            // value={data.confirmPassword}
-            //  onChange={this.handleChange}
           />
 
           <input
@@ -100,6 +100,8 @@ export default function Register() {
           </p>
         </form>
       </div>
+    }
+    </>
     );
   };
 
