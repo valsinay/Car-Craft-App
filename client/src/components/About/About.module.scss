@@ -1,60 +1,74 @@
-// .mercedes {
-//     top:46%;
-//     width:80%;
-//     height:80%;
-//     box-shadow:0 5px 50px rgba(0,0,0,.5);
-//     opacity:0.89;
-//     border-radius: 0.5em;
-//     border-style:none;
-//     background-color:white;
-    
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  font-family: Raleway, serif;
 
-//     :global{
-//         .About_bookingsButton{
-//             width:12em;
-//             background-color: #3498db;
-//             border-color: black;
-//             border:0;
-//         }
-//     }
-//     .h2{
-//         color: black;
-//         font-weight:700;
-//         font-style:italic;
-//         font-size:2.5em;
-//         margin-top:-0.5em;
-    
-//     }
-//     .img{
-//         box-shadow:0 5px 15px black;
-//         margin-top:0.8em;
-//     }
-    
-    
-//     .p{
-//         margin-top:2em;
-//         text-align: center;
-//         font-style:italic;
-//         justify-content: center;
-//         align-items: center;
-//         font-size:22px;
-//     }
-    
-//     //  .bookingsButton{
-//     //     width:12em;
-//     //     background-color: #3498db;
-//     //     border-color: black;
-//     //     border:0;
-//     // }
-    
-    
-//     .bookingsButton:hover{
-//         border:2px solid #3498db;
-//         background-color: rgb(236, 19, 19);
-//         color:white;
-//         border:0;
-//         text-decoration: none;
-//     }
-// }
+  .mercedes {
+    top: 46%;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5);
+    opacity: 0.89;
+    border-radius: 0.5em;
+    border-style: none;
+    background-color: white;
 
+    h2 {
+      color: black;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 2.3em;
+      margin-left: 5px;
+      margin-right: 5px;
+      border-bottom: 2px solid black;
+      text-transform: uppercase;
+    }
 
+    .aboutFlexWrapper {
+      display: flex;
+    }
+
+    img {
+      width: 100%;
+      max-width: 800px;
+    }
+
+    p {
+      text-align: center;
+      font-style: italic;
+      justify-content: center;
+      align-items: center;
+      font-size: 19px;
+    }
+
+    .bookingsButton {
+      width: 12em;
+      background-color: #3498db;
+      border-color: black;
+      border: 0;
+      width: 12em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      background-color: #3498db;
+      border: 0;
+      font-size: 32px;
+      color: white;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 78px;
+    }
+
+    .bookingsButton:hover {
+      border: 2px solid #3498db;
+      background-color: #0f5685;
+      transition: all 1s;
+      color: white;
+      border: 0;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,6 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Solway:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
+
+.mainDetails{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 .productCard {
   min-height: 300px;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.25);
@@ -88,6 +95,7 @@
     background: #3498db;
     text-transform: uppercase;
     font-size: 1.3em;
+    font-weight: 700;
     box-shadow: 1px 1px 9px 0px black;
     text-decoration: none;
     margin-bottom: 10px;

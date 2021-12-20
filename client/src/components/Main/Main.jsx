@@ -9,13 +9,14 @@ import CreateCar from "../CreateCar/CreateCar";
 import Details from '../Details/Details'
 import Homepage from "../Homepage/Homepage"
 import Edit from "../Edit/Edit";
+import AllCars from "../AllCars/AllCars"
 import { Route, Switch } from "react-router-dom";
 import styles from "./Main.module.scss";
 import { AuthContext } from "../../Context/AuthContext";
 import GuardedRoute from "../Common/GuardedRoute";
 
 
-const Main = () => {
+function Main() {
   const [user, setUserStatus] = useContext(AuthContext);
 
   return (
@@ -23,6 +24,7 @@ const Main = () => {
         <AuthContext.Provider  value={[user, setUserStatus]}>
       <Switch>
         <Route exact path={"/"} component={Homepage} />
+        <Route exact path={"/all"} component={AllCars} />
         <Route exact path={"/register"} component={Register} />
         <Route exact path={"/login"} component={Login} />
         <Route exact path={"/logout"} component={Logout} />

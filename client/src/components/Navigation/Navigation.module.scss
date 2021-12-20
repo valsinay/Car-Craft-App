@@ -7,17 +7,16 @@
   height: 55px;
   align-items: center;
   justify-content: space-between;
-  
-  
-  .navMenu:nth-child(2){
+
+  .navMenu:nth-child(2) {
     flex-grow: 1;
     margin-left: 20px;
     align-items: center;
   }
 
-  .carSvg{
+  .carSvg {
     width: 100px;
-    color:blue;
+    color: blue;
   }
   .logo img {
     text-decoration: none;
@@ -40,7 +39,7 @@
 
     a {
       --fill-color: #d6191f;
-      font: 700 1.4rem Raleway, sans-serif;
+       font: 700 1.3rem Raleway, sans-serif;
       text-decoration: none;
       text-transform: uppercase;
       -webkit-text-stroke: 2px var(--fill-color);
@@ -50,14 +49,24 @@
       transition: 0.5s linear;
       letter-spacing: 1px;
 
+      &:hover:before{
+        border-color: #ed271c;
+      }
+      &:hover :before {
+        content: " ";
+        position: absolute;
+        right: 0;
+        bottom: -0.3125rem;
+        left: 0;
+        border-bottom: 0.3125rem solid;
+      }
       &:hover {
         background-size: 100%;
         cursor: pointer;
       }
-     &.active {
+      &.active {
         color: #d6191f;
       }
     }
-
   }
 }

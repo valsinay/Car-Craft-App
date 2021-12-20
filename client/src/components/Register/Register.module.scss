@@ -11,7 +11,7 @@
     background: #191919;
     min-width: 450px;
     width: 50%;
-    min-height: 77vh;
+    min-height: 500px;
     justify-content: space-between;
     align-items: center;
     text-align: center;
@@ -23,7 +23,7 @@
     .registerHeading {
       color: white;
       text-transform: uppercase;
-      font-size: 2.5em;
+      font-size: 2.3em;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-shadow: 1px 0px 2px #fff1f1;
@@ -48,6 +48,7 @@
       outline: none;
       color: white;
       border-radius: 12px;
+      margin-bottom: 12px;
 
       &:focus {
         border: 2px solid #2ecc71;
@@ -75,6 +76,8 @@
       background: #2ecc71;
       text-transform: uppercase;
       font-size: 1.3em;
+    font-weight: 700;
+
 
       &:hover {
         background: #1a924c;

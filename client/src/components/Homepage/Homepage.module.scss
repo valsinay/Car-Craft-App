@@ -1,8 +1,42 @@
 .homepage {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 
- 
+
+  .homeCarsContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: linear-gradient(0deg, rgba(180,8,16,1) 0%, rgba(57,59,60,1) 97%);
+    border-bottom: 2px solid white;
+    align-items: center;
+
+    .homeCarsContainerHeading,.homeCarsContainerMsg {
+      color: white;
+      text-transform: uppercase;
+      font-size: 2.3em;
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: 1.5px;
+      margin:0;
+      padding: 10px 40px;
+      }
+
+      .homeCarsContainerMsg{
+        color:black;
+        font-style: normal;
+        font-size: 2.1em;   
+         text-shadow: 0px 1px 4px white;
+
+         &.second{
+           font-size: 1.3em;
+           text-shadow: none;
+           color:white;
+         }
+      }
+  }
   .carList {
     display: flex;
     flex-wrap: wrap;
@@ -15,8 +49,6 @@
       text-transform: uppercase;
       min-width: 300px;
       list-style: none;
-
-      
     }
   }
 }

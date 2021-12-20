@@ -26,7 +26,11 @@ function Navigation() {
             Home
           </NavLink>
         </li>
-        
+        <li>
+          <NavLink exact activeClassName={styles.active} to="/all">
+           Catalog
+          </NavLink>
+        </li>
         <li>
           <NavLink to="/about" activeClassName={styles.active}>
             About
@@ -64,7 +68,7 @@ function Navigation() {
         ) : (
           <>
             <li>
-              <NavLink to="/" activeClassName="active">
+              <NavLink to="/account" activeClassName="active">
                 Welcome, {username}
               </NavLink>
             </li>

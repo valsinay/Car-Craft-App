@@ -33,6 +33,7 @@ export default function Details(){
     }
     return(
         <>
+        <main className={styles.mainDetails}>
         {loading ? <LoaderComponent/> : 
          
         <div className={styles.productCard}>
@@ -54,6 +55,7 @@ export default function Details(){
         </div>
     </div>     
   }
+  </main>
     </>
     )
 }

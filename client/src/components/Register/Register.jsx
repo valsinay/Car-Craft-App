@@ -72,7 +72,7 @@ export default function Register() {
             placeholder="Confirm password"
           />
 
-          <input
+          {/* <input
             className={styles.datePicker}
             type="text"
             placeholder="Select your birthdate"
@@ -87,7 +87,7 @@ export default function Register() {
             type="text"
             placeholder="Enter your address"
             name="address"
-          />
+          /> */}
 
           <button className={styles.submitBtn} type="submit">
             Register
