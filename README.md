@@ -27,7 +27,7 @@ If you wish to delete the car, just click on `Delete`.
 
 The site takes you to the `Not Found` page if you try to access a non-existent url.
 
- ⚒ ## Built With <br/>
+ ⚒ # Built With <br/>
 
 `React - Frontend` <br/>
 `Node JS - Backend` <br/>
