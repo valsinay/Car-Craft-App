@@ -29,7 +29,7 @@ The site takes you to the `Not Found` page if you try to access a non-existent u
 
  ## ⚒  Built With <br/>
 
- #### `React - Frontend` <br/>
+ #### `React - Frontend` 
  ### `Node JS - Backend` <br/>
  ### `Mongo DB(Authentication)` <br/>
  ### `Express.js` <br/>
