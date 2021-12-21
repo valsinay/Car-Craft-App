@@ -1,36 +1,66 @@
-# My-React-App
-React project repository
-Getting Started with Create React App
-This project was bootstrapped with Create React App.
+# 🚗 Car Craft App 
 
-Available Scripts
+Realised with `MERN` Stack
+ 
+This is a car application where you can upload your cars and view other user's cars.
+
+Accessing cars can be done by clicking on pages `Home`, `Catalog`and if you are a registered user, you'll be able to view your created cars from the `My Account` page.
+
+The project has `Register`/`Login` functionality.<br/>
+
+Non registered visitors can access the pages: `Home`, `Catalog`, `About`, `Contacts`.
+
+If the visitor creates an account, he'll become user. The user can access the pages: `Home`, `Catalog`, `About`, `Contacts`, `Create Car`, `My Account`, `Edit`, `Delete` (`Edit` and `Delete` function only if the user is the creator of the car).
+
+On the `Home` and `Catalog` page cars are displayed in card , containing information for the `model`, `make`,`year`, `category`, `engine` and `price` of the car.
+
+The `Catalog` page also provides `Search` functionality where you can search by the make, model, year, category or engine.
+
+In order to look more dynamic, the `Home` page shows 6 randomly chosen vehicles each time you click on it.
+
+`Catalog`and `My cars` work almost the same.
+Both visitors and users can see the `Details` button which redirects to the `Details` page of the certain car. If you are the creator of the car, you will see the `Edit` and `Delete` buttons.
+
+Once registered, using the `Create Car` page takes you to a form which you can submit only after all the required information has been entered. There is a validation check if the make is a number.The year is a number between 1800 and the current year and the price is also a number. <br/>
+`Edit` page lets you edit all the information and if its correct, gets you back on the `Details` page of the car.<br/>
+If you wish to delete the car, just click on `Delete`.
+
+The site takes you to the `Not Found` page if you try to access a non-existent url.
+
+
+## How to run the App
+
+### `npm install` in the client and back-end directories
+
+## Available Scripts
+
 In the project directory, you can run:
 
-npm start for both server and client
-Runs the app in the development mode.
-Open http://localhost:3000 to view it in the browser.
+### `npm start`
 
-The page will reload if you make edits.
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+In the client directory, you can run:
+
+### `npm start`
+
+Open [http://localhost:9999](http://localhost:9999) to view it in the browser.
+
+The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-npm test
-Launches the test runner in the interactive watch mode.
-See the section about running tests for more information.
+### `npm test`
 
-npm run build
-Builds the app for production to the build folder.
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.
+The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
-See the section about deployment for more information.
-
-npm run eject
-Note: this is a one-way operation. Once you eject, you can’t go back!
-
-If you aren’t satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
