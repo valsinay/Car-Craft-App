@@ -30,15 +30,15 @@ The site takes you to the `Not Found` page if you try to access a non-existent u
  ## ⚒  Built With <br/>
 
  #### `React - Frontend` 
- ### `Node JS - Backend` <br/>
- ### `Mongo DB(Authentication)` <br/>
- ### `Express.js` <br/>
- ### `React Router v5`  <br/>
- ### `Fluent UI for the spinner`  <br/>
- ### `React Hooks`  <br/>
- ### `Context API (Keeping User Data)` <br/>
- ### `Custom HTML and CSS` <br/>
- ### `Error handling  and form data validation with React Toastify library`<br/>
+ #### `Node JS - Backend`
+ #### `Mongo DB(Authentication)` 
+ #### `Express.js` 
+ #### `React Router v5`  
+ #### `Fluent UI for the spinner` 
+ #### `React Hooks`  
+ #### `Context API (Keeping User Data)` 
+ #### `Custom HTML and CSS` 
+ #### `Error handling  and form data validation with React Toastify library`
 
 
 ## How to run the App
