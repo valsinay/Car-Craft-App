@@ -23,7 +23,6 @@ export default function Homepage() {
     
   },[])
 
-
   const shuffledCars=shuffle(cars);
 
   return (
@@ -36,7 +35,7 @@ export default function Homepage() {
                     <div className={styles.homeCarsContainer}>
                     <h2 className={styles.homeCarsContainerHeading}>Welcome to Car Craft</h2>
                     <p className={styles.homeCarsContainerMsg}>The best place to find your dream car</p>
-                    <p className={styles.homeCarsContainerMsg + " " +styles.second}>Below you will find some of our top models</p>
+                    <p className={styles.homeCarsContainerMsg + " " + styles.second}>Below you will find some of our top models</p>
                   </div>
                     <ul className={styles.carList}>
                         {shuffledCars.slice(0,6).map(x => <li key={x._id} className={styles.carItem}><CarCard cars={x} /></li>)}
@@ -46,7 +45,7 @@ export default function Homepage() {
                 : <p className="empty-list">No cars in database!</p>
             })
             </>
-            : <LoaderComponent/>}
+            : <LoaderComponent message="Loading,please wait"/>}
         </div>
 
   );

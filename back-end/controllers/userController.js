@@ -2,11 +2,13 @@ const User = require("../models/user")
 const router = require('express').Router();
 const jwt = require('../utils/jwt');
 const config = require('../config/config')
-
+const verifySignUp=require('./verifyUser')
 
 router.post('/register', (req, res, next) => {
     const { username, password } = req.body;
+    verifySignUp,
     User.create({ username, password })
+
         .then((user) => res.send(user))
         .catch(next);
 });

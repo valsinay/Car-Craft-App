@@ -27,8 +27,9 @@ export default function Register() {
       Object.fromEntries(new FormData(e.currentTarget));
 
     if (registerValidator(username, password, confirmPassword)) {
+     
       userService.register(username, password);
-      toast.success("🦄You have successfully registered!", {
+      toast.success("You have successfully registered!", {
         position: "top-right",
         toastClassName: "toast-container success"
       });

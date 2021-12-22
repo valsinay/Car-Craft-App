@@ -1,7 +1,8 @@
 import styles from './Details.module.scss'
 import { Link,useParams, useHistory} from 'react-router-dom';
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import carService from '../../services/car-service';
+import { AuthContext } from '../../Context/AuthContext';
 import { toast } from "react-toastify";
 import LoaderComponent from '../Common/LoaderComponent/LoaderComponent';
 
@@ -11,6 +12,8 @@ export default function Details(){
   const [loading,setLoading]=useState(false)
   const [car,setCar] = useState({})
   const {carId} = useParams();
+  const [user]= useContext(AuthContext);
+
 
     useEffect(()=>{
         carService.getOne(carId)
@@ -31,6 +34,7 @@ export default function Details(){
         });
 
     }
+
     return(
         <>
         <main className={styles.mainDetails}>
@@ -48,10 +52,11 @@ export default function Details(){
                 <p>Fuel Type: <span>{car.engine}</span></p>
                 <p>Price: <span>${car.price}</span></p>
             </div>
-            <div className={styles.buttonBox}>
+            {user.userId === car.ownerId ?  <div className={styles.buttonBox}>
                 <Link className={styles.editBtn} to={`/edit/${car._id}`}>Edit</Link>
                 <Link className={styles.deleteBtn} to={`/delete/${car._id}`} onClick={deleteHandler}>Delete</Link>
-            </div>
+            </div> : null}
+           
         </div>
     </div>     
   }

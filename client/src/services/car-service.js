@@ -12,13 +12,22 @@ const carService = {
   getAll: (data) => {
     return axios(`${host}/car/carList`,data);
   },
+
+  getMyCars:(ownerId)=>{
+    let query = encodeURIComponent(`_ownerId=${ownerId}`)
+    return axios(`${host}/car/carList?where=${query}}`)
+    
+  },
+
   update: (carId, carData) => {
     return axios.put(`${host}/car/edit/${carId}`, carData);
   },
+
   getOne:(carId)=>{
     return fetch(`${host}/car/details/${carId}`)
     .then(res=>res.json())
   },
+
   delete:(carId,data)=>{
     return axios.delete(`${host}/car/delete/${carId}`, data)
 

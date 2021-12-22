@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700,900");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,900&family=Solway:wght@400;500&display=swap");
+
+main {
+  width: 100%;
+  min-height: 100vh;background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgb(50 47 47 / 50%), rgb(0 0 0 / 50%)), url(/photo-of-person-driving-769892.jpg);
+
+
+  .homepage {
+    display: flex;
+    flex-direction: column;
+  
+
+    .allCarsContainer {
+      display: flex;
+      justify-content: center;
+      // background-color: #b40810;
+      border-bottom: 2px solid white;
+      background: linear-gradient(
+        0deg,
+        rgba(180, 8, 16, 1) 0%,
+        rgba(57, 59, 60, 1) 97%
+      );
+
+      height: 100px;
+      align-items: center;
+
+      .allCarsContainerHeading {
+        color: white;
+        text-transform: uppercase;
+        font-size: 2.3em;
+        font-weight: 900;
+        font-style: italic;
+        letter-spacing: 1.5px;
+        margin: 0;
+        padding: 10px 40px;
+      }
+    }
+
+    .carList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 20px;
+
+      .carItem {
+        padding: 20px;
+        flex-grow: 1;
+        text-transform: uppercase;
+        min-width: 300px;
+        list-style: none;
+      }
+    }
+
+    .searchBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px 40px;
+
+      .searchIcon {
+        margin-left: -22px;
+        color: black;
+        z-index: 1;
+      }
+      .searchBoxInput {
+        border: 0;
+        background: none;
+        display: block;
+        text-align: left;
+        padding: 11px 8px;
+        min-width: 240px;
+        width: 27%;
+        outline: none;
+        border-radius: 12px;
+        transition: 0.25s;
+        background-color: white;
+        color: transparent;
+        color: black;
+
+        &:hover {
+          cursor: pointer;
+          border-color: transparent;
+          box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%),
+            0 3px 6px 0 rgb(238 232 232 / 12%),
+            0 5px 12px 4px rgb(219 213 213 / 9%);
+          transform: scale(1.03);
+          transition: all 0.5s ease-out;
+          &:focus {
+            cursor: text;
+          }
+        }
+      }
+    }
+  }
+}

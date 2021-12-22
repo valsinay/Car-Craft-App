@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import styles from "./Navigation.module.scss";
 import { AuthContext } from "../../Context/AuthContext";
 import sessionManager from "../../utils/session-manager";
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Navigation() {
   const [user] = useContext(AuthContext);
@@ -65,7 +67,7 @@ function Navigation() {
               </NavLink>
             </li>
           </>
-        ) : (
+         ) : (
           <>
             <li>
               <NavLink to="/account" activeClassName="active">
@@ -73,8 +75,13 @@ function Navigation() {
               </NavLink>
             </li>
             <li>
+              <NavLink to="/account" activeClassName="active">
+               My account
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/logout" activeClassName="active">
-                Logout
+              <FontAwesomeIcon className={styles.signOut} icon={faSignOutAlt}/>
               </NavLink>
             </li>
           </>

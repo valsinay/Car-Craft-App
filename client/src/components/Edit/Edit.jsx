@@ -32,18 +32,10 @@ export default function Edit({}){
       setLoading(true)
       let carData = Object.fromEntries(new FormData(e.currentTarget))
 
-      // if(carValidator(car.make,car.model,car.year,category,engine,car.price)){
+     
         carService.update(car._id, carData)
-        // .then((response) => {
-        //   toast.success("You edited your car successfully! 🚗");
-        //   history.push("/");
-        //   console.log(response);
-        // })
-        // .catch((err) => {
-        //   toast.error(err);
-        // });
-          toast.success("You edited successfully your car!🚗");
-        history.push("/")
+        toast.success("You edited successfully your car!🚗");
+        history.push(`/details/${carId}`)
 
       // }
   }

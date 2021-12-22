@@ -37,7 +37,18 @@
       padding: 0 6px;
     }
 
-    a {
+    .signOut{
+      color:#d6191f;
+      transition: 0.2s linear;
+      font-size: 1.5rem;
+     
+      &:hover{
+        transform:scale(1.2);
+        cursor: pointer;
+      }
+    }
+
+    a{
       --fill-color: #d6191f;
        font: 700 1.3rem Raleway, sans-serif;
       text-decoration: none;

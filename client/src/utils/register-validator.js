@@ -3,6 +3,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function registerValidator(username, password, confirmPass) {
   
+  if(username =='' || password=='' || confirmPass ==''){
+    toast.error('All fields are required!');
+    return false;
+  }
+
   if(username === '' || username.length < 4) {
     toast.error('Username must be at least 4 characters long!');
     return false;

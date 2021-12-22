@@ -9,11 +9,12 @@ import CreateCar from "../CreateCar/CreateCar";
 import Details from '../Details/Details'
 import Homepage from "../Homepage/Homepage"
 import Edit from "../Edit/Edit";
-import AllCars from "../AllCars/AllCars"
+import AllCars from "../Catalog/Catalog"
 import { Route, Switch } from "react-router-dom";
 import styles from "./Main.module.scss";
 import { AuthContext } from "../../Context/AuthContext";
 import GuardedRoute from "../Common/GuardedRoute";
+import MyAccount from "../MyAccount/MyAccount";
 
 
 function Main() {
@@ -31,13 +32,14 @@ function Main() {
         <Route exact path={"/contacts"} component={Contacts} />
         <Route exact path={"/about"} component={About} />
         <Route exact path={"/details/:carId"} component={Details} />
-
+        <Route exact path={"/account"} component={MyAccount} />
         <Route component={<GuardedRoute />}>
            <Route exact path={"/create-car"} component={CreateCar} />
            <Route exact path={"/edit/:carId"} component={Edit} />
         </Route>
+        {/* <Route  path={"*"} component={NotFound} /> */}
 
-        <Route exact path={"/*"} component={NotFound} />
+
       </Switch>
       </AuthContext.Provider>
     </main>
