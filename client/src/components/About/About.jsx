@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./About.module.scss";
 
 function About() {
-  function onChange(date, dateString) {
-    console.log(date, dateString);
-  }
+  
 
   return (
     <div className={styles.aboutContainer}>

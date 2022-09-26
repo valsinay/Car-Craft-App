@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Solway:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
-.productCard {
-  min-height: 300px;
+.mainCard {
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   background: linear-gradient(
@@ -12,16 +11,34 @@
   );
   color: white;
   overflow: hidden;
-  list-style: none;
-  display: flex;
+  // flex: 0 1 calc(25% - 1em);
 
   &:hover {
     border-color: transparent;
-    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgba(238, 232, 232, 0.12),
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%),
+      0 3px 6px 0 rgba(238, 232, 232, 0.12),
       0 5px 12px 4px rgba(219, 213, 213, 0.09);
-      transform: scale(1.03);
-    transition: all 0.5s ease-out;
+    // transform: scale(1.03);
+    transition: all 0.2s ease-in-out;
+
   }
+
+  h1 {
+    background: #d81921;
+    padding: 6px;
+    margin: 0;
+    font-size: 23px;
+    font-weight: bold;
+  }
+}
+.productCard {
+  min-height: 300px;
+  min-height: 300px;
+  color: white;
+  overflow: hidden;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
 
   .productImgName,
   .productInfo {
@@ -32,15 +49,15 @@
   .productInfo {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-evenly;
-    padding-left: 34px;
+    padding: 14px;
   }
 
   .productImgName {
     align-items: center;
-    height: 300px;
-    width: 420px;
+    height: 313px;
+    flex-basis: 65%;
 
     & img {
       width: 100%;
@@ -90,10 +107,7 @@
     &:hover {
       background: #ad2026;
       cursor: pointer;
-      
     }
-
-  
   }
 }
 
@@ -101,4 +115,15 @@ p {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 1300px) {
+  .productCard {
+    flex-direction: column;
+  }
 
+  .productImgName{
+   img{
+     height: 313px  !important;
+   }
+  }
+
+}

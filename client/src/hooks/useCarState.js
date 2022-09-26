@@ -7,7 +7,6 @@ const useCarState = (carId) => {
 
     const controller = useMemo(() => {
         const controller = new AbortController();
-
         return controller;
     }, [])
 

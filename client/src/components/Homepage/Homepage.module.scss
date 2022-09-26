@@ -4,6 +4,12 @@
   flex-direction: column;
 
 
+  .emptyList{
+    color:white;
+    font-size: 2.2em;
+    text-align: center;
+  }
+  
   .homeCarsContainer {
     display: flex;
     justify-content: center;
@@ -16,7 +22,7 @@
     .homeCarsContainerHeading,.homeCarsContainerMsg {
       color: white;
       text-transform: uppercase;
-      font-size: 2.3em;
+      font-size: 2.1em;
       font-weight: 900;
       font-style: italic;
       letter-spacing: 1.5px;
@@ -24,11 +30,16 @@
       padding: 10px 40px;
       }
 
+      .homeCarsContainerHeading{
+        padding-bottom: 0;
+      }
+
       .homeCarsContainerMsg{
         color:black;
         font-style: normal;
-        font-size: 2.1em;   
+        font-size: 1.9em;   
          text-shadow: 0px 1px 4px white;
+         padding:0;
 
          &.second{
            font-size: 1.3em;
@@ -49,6 +60,43 @@
       text-transform: uppercase;
       min-width: 300px;
       list-style: none;
+      width: 50%;
     }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .homeCarsContainer{
+    text-align: center;
+  }
+  h2,p{
+    font-size: 16px !important;
+  }
+
+  .homeCarsContainerHeading,.homeCarsContainerMsg{
+    font-size: 1.9em !important;
+
+    &.second{
+      font-size: 1.7em !important;
+    }
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+
+  h2,p{
+    font-size: 16px !important;
+  }
+
+  .homeCarsContainerHeading,.homeCarsContainerMsg{
+    font-size: 1.6em !important;
+
+  }
+
+
+  .homeCarsContainerMsg.second{
+    font-size: 1.5em !important;
   }
 }

@@ -1,15 +1,13 @@
-import React, { useContext, Fragment, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navigation.module.scss";
 import { AuthContext } from "../../Context/AuthContext";
-import sessionManager from "../../utils/session-manager";
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Navigation() {
   const [user] = useContext(AuthContext);
   const [isLogged, setIslogged] = useState(false);
-  const username = sessionManager.getUsername();
 
   useEffect(() => {
     setIslogged(user.isLogged);
@@ -30,7 +28,7 @@ function Navigation() {
         </li>
         <li>
           <NavLink exact activeClassName={styles.active} to="/all">
-           Catalog
+            Catalog
           </NavLink>
         </li>
         <li>
@@ -44,12 +42,11 @@ function Navigation() {
           </NavLink>
         </li>
         {isLogged ? (
-        <li>
-          <NavLink exact activeClassName={styles.active} to="/create-car">
-            Create Car
-           
-          </NavLink>
-        </li>
+          <li>
+            <NavLink exact activeClassName={styles.active} to="/create-car">
+              Create Car
+            </NavLink>
+          </li>
         ) : null}
       </ul>
 
@@ -67,21 +64,19 @@ function Navigation() {
               </NavLink>
             </li>
           </>
-         ) : (
+        ) : (
           <>
             <li>
               <NavLink to="/account" activeClassName="active">
-                Welcome, {username}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/account" activeClassName="active">
-               My account
+                My account
               </NavLink>
             </li>
             <li>
               <NavLink to="/logout" activeClassName="active">
-              <FontAwesomeIcon className={styles.signOut} icon={faSignOutAlt}/>
+                <FontAwesomeIcon
+                  className={styles.signOut}
+                  icon={faSignOutAlt}
+                />
               </NavLink>
             </li>
           </>

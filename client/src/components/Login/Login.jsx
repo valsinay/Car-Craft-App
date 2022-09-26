@@ -1,10 +1,10 @@
-import React, { useState, useContext, Component } from "react";
+import React, { useState, useContext } from "react";
 import sessionManager from "../../utils/session-manager";
 import userService from "../../services/user-service";
 import { AuthContext } from "../../Context/AuthContext";
 import { toast } from "react-toastify";
 import signValidator from "../../utils/login-validator";
-import LoaderComponent from '../Common/LoaderComponent/LoaderComponent';
+import LoaderComponent from "../Common/LoaderComponent/LoaderComponent";
 
 import { Link } from "react-router-dom";
 import styles from "./Login.module.scss";
@@ -13,8 +13,7 @@ function Login(props) {
   const [user, setUserStatus] = useContext(AuthContext);
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [loading,setLoading]=useState(false)
-
+  const [loading, setLoading] = useState(false);
 
   const updateUsername = (e) => {
     setUserName(e.target.value);
@@ -26,7 +25,7 @@ function Login(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
 
     if (signValidator(username, password)) {
       userService
@@ -36,65 +35,67 @@ function Login(props) {
           sessionManager.save(token, user.username);
 
           toast.success("You have successfully logged in!", {
-            icon: "🚀"
+            icon: "🚀",
           });
           setUserStatus({
             isLogged: sessionManager.isLogged(),
             userId: user._id,
           });
           props.history.push("/");
-
         })
         .catch(() => {
           toast.error("Incorrect username or password");
-          setLoading(false)
+          setLoading(false);
           return false;
-        }); 
-
-    }
-    else{
-      setLoading(false)
+        });
+    } else {
+      setLoading(false);
     }
   };
 
   return (
     <>
-    {loading  ? <LoaderComponent />
-    
-    :<div className={styles.form}>
-      <form className={styles.authForm} onSubmit={handleSubmit} method="POST">
-        <h2 className={styles.loginHeading}>Login here</h2>
-        <input
-          className={styles.username}
-          type="username"
-          name="username"
-          placeholder="Username"
-          autoComplete="off"
-          value={username}
-          onChange={updateUsername}
-        />
+      {loading ? (
+        <LoaderComponent />
+      ) : (
+        <div className={styles.form}>
+          <form
+            className={styles.authForm}
+            onSubmit={handleSubmit}
+            method="POST"
+          >
+            <h2 className={styles.loginHeading}>Login here</h2>
+            <input
+              className={styles.username}
+              type="username"
+              name="username"
+              placeholder="Username"
+              autoComplete="off"
+              value={username}
+              onChange={updateUsername}
+            />
 
-        <input
-          className={styles.password}
-          type="password"
-          name="password"
-          placeholder="Password"
-          autoComplete="off"
-          value={password}
-          onChange={updatePassword}
-        />
+            <input
+              className={styles.password}
+              type="password"
+              name="password"
+              placeholder="Password"
+              autoComplete="off"
+              value={password}
+              onChange={updatePassword}
+            />
 
-        <button className={styles.submitBtn}>Login</button>
-        <p className={styles.memberParagraph}>
-          Not a member?
-          <Link className={styles.registerHere} to="/register">
-            Register here!
-          </Link>
-        </p>
-      </form>
-    </div> }
+            <button className={styles.submitBtn}>Login</button>
+            <p className={styles.memberParagraph}>
+              Not a member?
+              <Link className={styles.registerHere} to="/register">
+                Register here!
+              </Link>
+            </p>
+          </form>
+        </div>
+      )}
     </>
-
   );
 }
 

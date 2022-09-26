@@ -28,7 +28,6 @@ const userService = {
             .then((res) => {
                 sessionManager.clear();
                 toast.success('You have successfully logged out.')
-                console.log('user logged out')
             })
     }
 }

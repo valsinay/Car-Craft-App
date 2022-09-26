@@ -50,7 +50,7 @@
 
     a{
       --fill-color: #d6191f;
-       font: 700 1.3rem Raleway, sans-serif;
+       font: 700 1.4rem Raleway, sans-serif;
       text-decoration: none;
       text-transform: uppercase;
       -webkit-text-stroke: 2px var(--fill-color);
@@ -79,5 +79,33 @@
         color: #d6191f;
       }
     }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+
+  .navMenu a{
+
+    font-size: 1.3rem !important;
+  }
+}
+
+@media screen and (max-width:900px) {
+
+  .navMenu a{
+
+    font-size: 1.1rem !important;
+  }
+}
+@media screen and (max-width:600px) {
+
+  .mainWrapper{
+
+    flex-direction: column;
+    height: 100px;
+  }
+
+  .navMenu:nth-child(2) {
+   margin-left: 0 !important;
   }
 }

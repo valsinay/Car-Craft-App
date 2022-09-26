@@ -41,7 +41,7 @@ router.post('/login', (req, res, next) => {
 })
 
 router.post('/logout', (req, res, next) => {
-    res.clearCookie(config.authCookieName).send("Logout successfully!")
+    res.clearCookie(config.authCookieName).send("Successfully logged out!")
 })
 
 

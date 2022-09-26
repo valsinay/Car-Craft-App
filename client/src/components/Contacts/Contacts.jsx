@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styles from "./Contacts.module.scss";
 
 export default function Contacts() {
@@ -11,8 +11,6 @@ export default function Contacts() {
         autoComplete="off"
         placeholder="Your Name"
         className={styles.username}
-        // value={data.username}
-        //onChange={this.handleChange}
       />
       <input
         type="email"
@@ -20,8 +18,6 @@ export default function Contacts() {
         placeholder="Your Email"
         autoComplete="off"
         className={styles.email}
-        // value={data.password}
-        // onChange={this.handleChange}
       />
       <input
         type="phone"
@@ -37,8 +33,6 @@ export default function Contacts() {
         autoComplete="off"
         placeholder="Your message"
         className={styles.message}
-        // value={data.confirmPassword}
-        // onChange={this.handleChange}
       />
       <button className={styles.submitBtn} type="submit">
         Submit
