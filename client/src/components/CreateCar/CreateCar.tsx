@@ -5,8 +5,12 @@ import { AuthContext } from "../../Context/AuthContext";
 import sessionManager from "../../utils/session-manager";
 import styles from "./CreateCar.module.scss";
 import { toast } from "react-toastify";
+import { Car } from "../models/CarModel";
+import { useHistory } from "react-router-dom";
 
-function CreateCar(props) {
+const CreateCar= (props:Car) =>{
+  const history = useHistory();
+
   const [user] = useContext(AuthContext);
 
   const [userId, setUserId] = useState("");
@@ -24,30 +28,30 @@ function CreateCar(props) {
     setUserId(user.userId);
   }, [user]);
 
-  const updateImage = (e) => {
+  const updateImage = (e:any) => {
     setImage(e.target.value);
   };
-  const updateMake = (e) => {
+  const updateMake = (e:any) => {
     setMake(e.target.value);
   };
-  const updateModel = (e) => {
+  const updateModel = (e:any) => {
     setModel(e.target.value);
   };
-  const updateYear = (e) => {
+  const updateYear = (e:any) => {
     setYear(e.target.value);
   };
  
-  const updateCategory = (e) => {
+  const updateCategory = (e:any) => {
     setCategory(e.target.value);
   };
-  const updateEngine = (e) => {
+  const updateEngine = (e:any) => {
     setEngine(e.target.value);
   };
-  const updatePrice = (e) => {
+  const updatePrice = (e:any) => {
     setPrice(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
 
     if (carValidator(make,model,year,category,engine, price,imageUrl)) {
@@ -55,7 +59,7 @@ function CreateCar(props) {
         .createCar({ make,model,year, category,engine, price, imageUrl,  owner: name, ownerId: userId, })
         .then((response) => {
           toast.success("You created successfully new car🚗");
-          props.history.push("/");
+          history.push("/");
           console.log(response);
         })
         .catch((err) => {

@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./CarCard.module.scss";
 import { Link } from "react-router-dom";
-
-export default function CarCard({ cars }) {
+const CarCard= ({ cars }:any) =>{
   return (
     <>
       <div className={styles.mainCard}>
@@ -41,3 +40,5 @@ export default function CarCard({ cars }) {
     </>
   );
 }
+
+export default CarCard;

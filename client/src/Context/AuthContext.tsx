@@ -1,8 +1,8 @@
 import React, {useState, createContext} from 'react';
 
-export const AuthContext = createContext();
+export const AuthContext = createContext<any>(null);
 
-export const AuthProvider = props => {
+export const AuthProvider = (props:any) => {
   const [user, setUserStatus] = useState( {isLogged: false, userId: ''} );
   const [cars, setCars] = useState([]);
 

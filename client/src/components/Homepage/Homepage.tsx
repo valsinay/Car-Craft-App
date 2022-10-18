@@ -3,8 +3,8 @@ import carService from "../../services/car-service";
 import CarCard from "../CarCard/CarCard";
 import styles from "./Homepage.module.scss";
 import LoaderComponent from "../Common/LoaderComponent/LoaderComponent";
-
-export default function Homepage() {
+import { Car } from "../models/CarModel";
+const Homepage = () => {
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -42,7 +42,7 @@ export default function Homepage() {
                 </p>
               </div>
               <ul className={styles.carList}>
-                {shuffledCars.slice(0, 6).map((x) => (
+                {shuffledCars.slice(0, 6).map((x: Car) => (
                   <li key={x._id} className={styles.carItem}>
                     <CarCard cars={x} />
                   </li>
@@ -52,16 +52,15 @@ export default function Homepage() {
           ) : (
             <p className={styles.emptyList}>No cars in database!</p>
           )}
-          
         </>
       ) : (
         <LoaderComponent message="Loading,please wait" />
       )}
     </div>
   );
-}
+};
 
-function shuffle(array) {
+function shuffle(array: Car[]) {
   let currentIndex = array.length,
     randomIndex;
 
@@ -77,3 +76,4 @@ function shuffle(array) {
 
   return array;
 }
+export default Homepage;

@@ -1,4 +1,4 @@
-export let Categories= [
+export const Categories= [
   { value: "sedan", text: "Sedan" },
   { value: "suv", text: "Suv" },
   { value: "van", text: "Van" },

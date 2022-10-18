@@ -2,9 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./About.module.scss";
 
-function About() {
-  
-
+const About = () => {
   return (
     <div className={styles.aboutContainer}>
       <div className={styles.mercedes}>
@@ -23,10 +21,10 @@ function About() {
           </p>
         </div>
         <Link className={styles.bookingsButton} to="/all">
-         Check vehicle catalog
+          Check vehicle catalog
         </Link>
       </div>
     </div>
   );
-}
+};
 export default About;

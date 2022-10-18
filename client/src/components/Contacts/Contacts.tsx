@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Contacts.module.scss";
 
-export default function Contacts() {
+const Contacts = () => {
   return (
     <form className={styles.form}>
       <h2 className={styles.contactHeading}>Contact form</h2>
@@ -28,7 +28,6 @@ export default function Contacts() {
       />
 
       <textarea
-        type="text"
         name="text"
         autoComplete="off"
         placeholder="Your message"
@@ -39,4 +38,6 @@ export default function Contacts() {
       </button>
     </form>
   );
-}
+};
+
+export default Contacts;

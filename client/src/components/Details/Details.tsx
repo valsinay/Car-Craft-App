@@ -6,12 +6,12 @@ import { AuthContext } from '../../Context/AuthContext';
 import { toast } from "react-toastify";
 import LoaderComponent from '../Common/LoaderComponent/LoaderComponent';
 
-export default function Details(){
+const Details =()=>{
 
   const history = useHistory();
   const [loading,setLoading]=useState(false)
-  const [car,setCar] = useState({})
-  const {carId} = useParams();
+  const [car,setCar] = useState<any>({})
+  const {carId} :any= useParams();
   const [user]= useContext(AuthContext);
 
 
@@ -23,7 +23,7 @@ export default function Details(){
     },[carId])
 
 
-    const deleteHandler = (e)=>{
+    const deleteHandler = (e:any)=>{
         e.preventDefault();
         setLoading(true)
 
@@ -64,3 +64,4 @@ export default function Details(){
     </>
     )
 }
+export default Details;

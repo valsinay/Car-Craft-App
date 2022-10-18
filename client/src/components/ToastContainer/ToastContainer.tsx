@@ -1,9 +1,7 @@
-import  React  from "react";
+import React from "react";
 import { CheckmarkCircleOutline } from "react-ionicons";
-import { toast } from "react-toastify";
 
-
-export default function ToastContainer() {
+const ToastContainer = () => {
   return (
     <div
       style={{
@@ -19,4 +17,6 @@ export default function ToastContainer() {
       <span style={{ marginLeft: 5 }}>You've registered!</span>
     </div>
   );
-}
+};
+
+export default ToastContainer;

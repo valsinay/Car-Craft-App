@@ -1,29 +1,30 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, ChangeEvent } from "react";
 import sessionManager from "../../utils/session-manager";
 import userService from "../../services/user-service";
 import { AuthContext } from "../../Context/AuthContext";
 import { toast } from "react-toastify";
 import signValidator from "../../utils/login-validator";
 import LoaderComponent from "../Common/LoaderComponent/LoaderComponent";
-
 import { Link } from "react-router-dom";
 import styles from "./Login.module.scss";
 
-function Login(props) {
+const Login = (props: any) => {
   const [user, setUserStatus] = useContext(AuthContext);
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const updateUsername = (e) => {
+  const updateUsername = (
+    e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLInputElement>
+  ) => {
     setUserName(e.target.value);
   };
 
-  const updatePassword = (e) => {
+  const updatePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
@@ -35,7 +36,6 @@ function Login(props) {
           sessionManager.save(token, user.username);
 
           toast.success("You have successfully logged in!", {
-            icon: "🚀",
           });
           setUserStatus({
             isLogged: sessionManager.isLogged(),
@@ -97,6 +97,6 @@ function Login(props) {
       )}
     </>
   );
-}
+};
 
 export default Login;

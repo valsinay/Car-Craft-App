@@ -7,6 +7,7 @@ import sessionManager from "../../utils/session-manager";
 import { AuthContext } from "../../Context/AuthContext";
 import styles from "./MyAccount.module.scss";
 import LoaderComponent from "../Common/LoaderComponent/LoaderComponent";
+import { Car } from "../models/CarModel";
 
 export default function MyAccount() {
   const [cars, setCars] = useState([]);
@@ -21,7 +22,9 @@ export default function MyAccount() {
     carService
       .getMyCars()
       .then((res) => {
-        return res.data.filter((el) => el.ownerId === user.userId);
+        console.log(res);
+        
+        return res.data.filter((el:any) => el.ownerId === user.userId);
       })
       .then((result) => setCars(result));
   }, []);
@@ -49,8 +52,8 @@ export default function MyAccount() {
             {cars.length > 0 ? (
               <ul className={styles.carList}>
                 {cars
-                  .sort((a, b) => a.make.localeCompare(b.make))
-                  .filter((x) => {
+                  .sort((a:Car, b:Car) => a.make.localeCompare(b.make))
+                  .filter((x:Car) => {
                     if (
                       x.make.toLowerCase().includes(searchTerm.toLowerCase())
                     ) {
@@ -75,7 +78,7 @@ export default function MyAccount() {
                       return false;
                     }
                   })
-                  .map((x) => (
+                  .map((x:Car) => (
                     <li key={x._id} className={styles.carItem}>
                       <CarCard cars={x} />
                     </li>

@@ -3,16 +3,16 @@ import userService from "../../services/user-service";
 import { useHistory } from "react-router-dom";
 import registerValidator from "../../utils/register-validator";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import styles from "./Register.module.scss";
 import "react-toastify/dist/ReactToastify.css";
 import LoaderComponent from "../Common/LoaderComponent/LoaderComponent";
+import { Link } from "react-router-dom";
 
-export default function Register() {
+ const Register = ()=> {
   const history = useHistory();
   const [loading, setLoading] = useState(false);
 
-  const registerSubmitHandler = (e) => {
+  const registerSubmitHandler = (e:any) => {
     e.preventDefault();
     setLoading(true);
 
@@ -24,7 +24,6 @@ export default function Register() {
       userService.register(username, password);
       toast.success("You have successfully registered!", {
         position: "top-right",
-        toastClassName: "toast-container success",
       });
       history.push("/login");
     } else {
@@ -65,23 +64,6 @@ export default function Register() {
               placeholder="Confirm password"
             />
 
-            {/* <input
-            className={styles.datePicker}
-            type="text"
-            placeholder="Select your birthdate"
-            name="date"
-            onFocus={onFocus}
-            onBlur={onBlur}
-            type={`${focus === true ? "date" : "text"}`}
-          />
-
-          <input
-            className={styles.address}
-            type="text"
-            placeholder="Enter your address"
-            name="address"
-          /> */}
-
             <button className={styles.submitBtn} type="submit">
               Register
             </button>
@@ -97,3 +79,6 @@ export default function Register() {
     </>
   );
 }
+
+
+export default Register;

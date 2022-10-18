@@ -8,7 +8,7 @@ import useCarState from "../../hooks/useCarState";
 import { toast } from "react-toastify";
 import LoaderComponent from "../Common/LoaderComponent/LoaderComponent";
 
-export default function Edit() {
+export default function Edit(props) {
   const history = useHistory();
 
   const { carId } = useParams();
@@ -31,7 +31,7 @@ export default function Edit() {
 
     carService.update(car._id, carData);
     toast.success("You edited your car successfully !🚗");
-    history.push(`/details/${carId}`);
+    props.history.push(`/details/${carId}`);
 
   };
 

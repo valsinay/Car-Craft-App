@@ -15,7 +15,7 @@ import styles from "./Main.module.scss";
 import { AuthContext } from "../../Context/AuthContext";
 import MyAccount from "../MyAccount/MyAccount";
 
-function Main() {
+const Main = () => {
   const [user, setUserStatus] = useContext(AuthContext);
 
   return (
@@ -41,6 +41,6 @@ function Main() {
       </AuthContext.Provider>
     </main>
   );
-}
+};
 
 export default Main;

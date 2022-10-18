@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Catalog.module.scss";
 import LoaderComponent from "../Common/LoaderComponent/LoaderComponent";
+import { Car } from "../models/CarModel";
 
-export default function AllCars() {
+const AllCars = () => {
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -44,8 +45,8 @@ export default function AllCars() {
             {cars.length > 0 ? (
               <ul className={styles.carList}>
                 {cars
-                  .sort((a, b) => a.make.localeCompare(b.make))
-                  .filter((x) => {
+                  .sort((a: Car, b: Car) => a.make.localeCompare(b.make))
+                  .filter((x: Car) => {
                     if (
                       x.make.toLowerCase().includes(searchTerm.toLowerCase())
                     ) {
@@ -70,7 +71,7 @@ export default function AllCars() {
                       return false;
                     }
                   })
-                  .map((x) => (
+                  .map((x: Car) => (
                     <li key={x._id} className={styles.carItem}>
                       <CarCard cars={x} />
                     </li>
@@ -86,4 +87,6 @@ export default function AllCars() {
       </div>
     </main>
   );
-}
+};
+
+export default AllCars;

@@ -5,7 +5,7 @@ import { AuthContext } from "../../Context/AuthContext";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Navigation() {
+const Navigation = () => {
   const [user] = useContext(AuthContext);
   const [isLogged, setIslogged] = useState(false);
 
@@ -84,6 +84,6 @@ function Navigation() {
       </ul>
     </nav>
   );
-}
+};
 
 export default Navigation;

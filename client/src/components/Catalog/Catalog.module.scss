@@ -24,7 +24,6 @@ main {
     .allCarsContainer {
       display: flex;
       justify-content: center;
-      // background-color: #b40810;
       border-bottom: 2px solid white;
       background: linear-gradient(
         0deg,
@@ -55,7 +54,6 @@ main {
 
       .carItem {
         padding: 20px;
-        // flex-grow: 1;
         text-transform: uppercase;
         min-width: 300px;
         list-style: none;
